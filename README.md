@@ -1,16 +1,35 @@
-# React + Vite
+# 🗳️ Election Assistant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered interactive assistant that helps users understand the election process, timelines, and steps in an easy-to-follow way.
 
-Currently, two official plugins are available:
+## 🎯 Chosen Vertical
+Election Process Assistant — helping citizens understand how elections work in India and around the world.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 💡 Approach and Logic
+Built using React + Vite with Google's Gemini AI API as the intelligence backbone. The assistant uses a custom system prompt to keep responses focused on election topics.
 
-## React Compiler
+## ✨ Features
+- 💬 AI Chat powered by Google Gemini API
+- 📅 Visual Election Timeline (10 step flowchart)
+- 🧠 Election Knowledge Quiz with scoring
+- 🇮🇳 Hindi/English multilingual support
+- 🌙 Dark/Light mode toggle
+- 📋 Copy message button
+- 🗑️ Clear chat button
+- ⚡ Typing animation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+- React + Vite
+- Google Gemini AI API
+- CSS3 with animations
 
-## Expanding the ESLint configuration
+## 🚀 How to Run
+1. Clone the repository
+2. Run `npm install`
+3. Create `.env` file with `VITE_GEMINI_API_KEY=your_key`
+4. Run `npm run dev`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📝 Assumptions
+- Users are primarily from India
+- Focus on Indian election process (ECI, EVM, MCC)
+- Free tier Gemini API is sufficient for demo
