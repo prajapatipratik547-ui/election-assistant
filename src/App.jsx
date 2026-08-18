@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+
 import "./App.css";
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+
 
 const SYSTEM_PROMPT = `You are an Election Process Assistant. You help users understand:
 - How elections work (local, state, national)
@@ -91,19 +91,36 @@ export default function App() {
     setInput("");
     setLoading(true);
     try {
-      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-      if (!chatRef.current) {
-        chatRef.current = model.startChat({ history: [], generationConfig: { maxOutputTokens: 1000 } });
-        await chatRef.current.sendMessage(SYSTEM_PROMPT);
-      }
-      const result = await chatRef.current.sendMessage(userText);
-      const response = await result.response;
-      setMessages((prev) => [...prev, { role: "assistant", text: response.text() }]);
-    } catch (error) {
-      setMessages((prev) => [...prev, { role: "assistant", text: "Error: " + error.message }]);
-    }
-    setLoading(false);
-  };
+     const response = await fetch("/api/gemini", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    message: `${SYSTEM_PROMPT}\n\nUser question: ${userText}`,
+  }),
+});
+
+if (!response.ok) {
+  throw new Error("Failed to get response from Gemini");
+}
+
+const data = await response.json();
+
+setMessages((prev) => [
+  ...prev,
+  { role: "assistant", text: data.response },
+]);
+
+} catch (error) {
+  setMessages((prev) => [
+    ...prev,
+    { role: "assistant", text: "Error: " + error.message },
+  ]);
+}
+
+setLoading(false);
+};
 
   const clearChat = () => {
     chatRef.current = null;
