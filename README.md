@@ -144,25 +144,28 @@ The application tracks the user's score and provides a final result.
 
 ## 🧠 AI Architecture
 
-The application follows a simple conversational AI architecture:
+Election Assistant uses a client-server architecture to keep the Gemini API credential on the server side.
 
 ```text
 User
   │
   ▼
-React Chat Interface
+React + Vite Frontend
   │
+  │ POST /api/gemini
   ▼
-User Question
+Vercel Serverless Function
   │
-  ▼
-Election System Prompt
-  │
+  │ GEMINI_API_KEY
   ▼
 Google Gemini 2.5 Flash
   │
   ▼
-AI Response
+AI Generated Response
+  │
+  ▼
+Vercel Serverless Function
   │
   ▼
 React Chat Interface
+
