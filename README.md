@@ -118,6 +118,24 @@ The application tracks the user's score and provides a final result.
 
 ---
 
+## 📸 Screenshots
+
+### 🤖 AI Election Assistant
+
+![AI Election Assistant](Screenshot%202026-08-18%20132001.png)
+
+### 💬 Gemini-Powered Response
+
+![Gemini AI Response](Screenshot%202026-08-18%20132014.png)
+
+### 📅 Interactive Election Timeline
+
+![Election Timeline](Screenshot%202026-08-18%20132019.png)
+
+### 🧠 Election Knowledge Quiz
+
+![Election Quiz](Screenshot%202026-08-18%20132024.png)
+
 ## 🛠️ Tech Stack
 
 ### Frontend
