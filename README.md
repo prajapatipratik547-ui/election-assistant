@@ -1,6 +1,11 @@
 # 🗳️ Election Assistant
 
 > An AI-powered interactive assistant that helps users understand the election process, voter registration, timelines, and election-related concepts in a simple and accessible way.
+## 🌐 Live Demo
+
+🚀 **[Try Election Assistant](https://election-assistant-amber-ten.vercel.app/)**
+
+Explore the AI-powered election assistant, interactive election timeline, and knowledge quiz.
 
 <p align="center">
 
@@ -186,4 +191,40 @@ Vercel Serverless Function
   │
   ▼
 React Chat Interface
+
+---
+
+## 🛠️ How to Run Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/prajapatipratik547-ui/election-assistant.git
+cd election-assistant
+
+### 2. Install dependencies
+
+```bash
+npm install
+
+### 3. Configure the Gemini API
+
+The application uses Google Gemini to power the AI assistant.
+
+Create a `.env` file in the project root and add your Gemini API key:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+
+The API key should be stored securely as an environment variable and must not be committed to GitHub.
+
+If deploying on Vercel, add `GEMINI_API_KEY` under the project's Environment Variables and enter your API key there.
+
+> ⚠️ Never expose your Gemini API key in frontend code or commit it to the repository.
+
+### 4. Start the development server
+
+```bash
+npm run dev
+
 
